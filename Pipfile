@@ -8,6 +8,7 @@ pandas = "*"
 requests = "*"
 nltk = "*"
 sklearn = "*"
+pytest = "*"
 
 [dev-packages]
 

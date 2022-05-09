@@ -124,6 +124,8 @@ def model_training_and_testing(train_features, test_features, train_names, test_
     print("Recall:", recall_score(test, predict, average="micro"))
     print("f1-score:", f1_score(test, predict, average="micro"))
 
+    return predict
+
 
 def main():
 
