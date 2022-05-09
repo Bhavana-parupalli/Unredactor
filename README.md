@@ -39,7 +39,7 @@ The testing_features function takes the data frame along with the string named '
 The model_training_and_testing function takes the features along with names returned from training_features() and testing_features() functions. Two lists are created namely feature_array and target_variable. The train_features argument contains a list of feature dictionaries, this list is looped and each dictionary is appended into feature_array list. Also, the train_names argument which contain list of names, each name is appended into target_variable list. Using the DictVectorizer the dictionaries appended into the feature_array are vectorized. Followed by using RandomForestClassifier the feature_array and target_variable are trained. Similarly, in order to test the model two lists f_array and test are created. The names present inside the test_names are appended into the test list and the dictionaries present inside the test_features are appended into the f_array list. Then after using DictVectorizer the f_array is vectorized and using model.predict the names are predcited. Finally, precision, recall and f1_score are printed.
 ### main()
 The main function contains function calls to all the functions.
-### unredactor.py execution
+## unredactor.py execution
 After connecting to the instance using SSH.
 
 Clone the repository: https://github.com/Bhavana-parupalli/cs5293sp22-project3
