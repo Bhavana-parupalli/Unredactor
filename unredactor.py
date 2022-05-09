@@ -132,6 +132,6 @@ def main():
     df1=extracting_unredacted_file("https://raw.githubusercontent.com/cegme/cs5293sp22/main/unredactor.tsv")
     train_features, train_names = training_features(df1, 'training')
     test_features, test_names = testing_features(df1, 'testing')
-    model_training_and_testing(train_features, test_features, train_names, test_names)
+    predictions=model_training_and_testing(train_features, test_features, train_names, test_names)
 
 main()
