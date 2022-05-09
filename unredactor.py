@@ -49,21 +49,6 @@ def doextraction(glob_text):
             docs.append(doc)
     return names, docs
 
-def get_entity(text):
-    human_names=[]
-    """Prints the entity inside of the text."""
-    for sent in sent_tokenize(text):
-        for chunk in ne_chunk(pos_tag(word_tokenize(sent))):
-            if hasattr(chunk, 'label') and chunk.label() == 'PERSON':
-                #print(chunk.label(), ' '.join(c[0] for c in chunk.leaves()))
-                person_name=""
-                for c in chunk.leaves():
-                    person_name=person_name + c[0]
-                    person_name=person_name + " "
-                person_name=person_name.rstrip()
-                human_names.append(person_name)
-    return human_names
-
 def extracting_unredacted_file(url):
     download = requests.get(url).content
 
