@@ -48,6 +48,7 @@ Give the following command in command line.
 ```bash
 pipenv run python unredactor.py
 ```
-## Assumptions and bugs
+## Assumptions or bugs
 * I assumed only two features. Firstly, i ran the model using only one feature that is name length but the names predicted are not that good. So, i have added another feature that is word count of the sentence. The names predicted when using both the features are superior. Therefore, i considered these two features. 
 * I have implemented some other models such as logistic regression and naive bayes classifier along with RandomForestClassifier. I found better accuracy when using RandomForestClassifier. Therefore, i considered RandomForestClassifier to predict the names.
+### For running this project i have updated the Machine type to e2-medium.
