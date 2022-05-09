@@ -39,5 +39,15 @@ The testing_features function takes the data frame along with the string named '
 The model_training_and_testing function takes the features along with names returned from training_features() and testing_features() functions. Two lists are created namely feature_array and target_variable. The train_features argument contains a list of feature dictionaries, this list is looped and each dictionary is appended into feature_array list. Also, the train_names argument which contain list of names, each name is appended into target_variable list. Using the DictVectorizer the dictionaries appended into the feature_array are vectorized. Followed by using RandomForestClassifier the feature_array and target_variable are trained. Similarly, in order to test the model two lists f_array and test are created. The names present inside the test_names are appended into the test list and the dictionaries present inside the test_features are appended into the f_array list. Then after using DictVectorizer the f_array is vectorized and using model.predict the names are predcited. Finally, precision, recall and f1_score are printed.
 ### main()
 The main function contains function calls to all the functions.
-## Assumptions
-* I have included only two features. Firstly, i ran the model using name length as feature but the names predicted are not that good. So, i have added another feature that is word count of the sentence. The names predicted when using both the features are superior. Therefore, i considered these two features. 
+### unredactor.py execution
+After connecting to the instance using SSH.
+
+Clone the repository: https://github.com/Bhavana-parupalli/cs5293sp22-project3
+
+Give the following command in command line.
+```bash
+pipenv run python unredactor.py
+```
+## Assumptions and bugs
+* I assumed only two features. Firstly, i ran the model using only one feature that is name length but the names predicted are not that good. So, i have added another feature that is word count of the sentence. The names predicted when using both the features are superior. Therefore, i considered these two features. 
+* I have implemented some other models such as logistic regression and naive bayes classifier along with RandomForestClassifier. I found better accuracy when using RandomForestClassifier. Therefore, i considered RandomForestClassifier to predict the names.
