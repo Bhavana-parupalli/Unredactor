@@ -48,6 +48,24 @@ Give the following command in command line.
 ```bash
 pipenv run python unredactor.py
 ```
+## tests/test_1.py
+### test_extracting_unredacted_file()
+The test_extracting_unredacted_file function passes the unredactor.tsv file path to the extracting_unredacted_file() function which is present inside the unredactor.py file. If the extracted output is of type 'pandas.core.frame.DataFrame' then the test case will pass else fail.
+### test_training_features()
+The test_training_features function passes the url of the unredactor.tsv file to the extracting_unredacted_file() function present inside unredactor.py file and the dataframe returned from this function along with the string 'training'(as this is training function) is passed to the training_features() present inside the unredactor.py file. This function returns feature dictionaries_list along with names_list. If the returned output is of type list then the test case will pass else fail.
+### test_testing_features()
+The test_testing_features function is similar to above test_training_features() function except that as this is testing function when the testing_features() function from unredactor.py receives dataframe along with the string 'testing'.
+### test_model_training_and_testing()
+The test_model_training_and_testing function passes the url to the extracting_unredacted_file() function present inside the unredactor.py file and the dataframe extracted from this is function is passed to training_features() and testing_features() functions present inside the unredactor.py file and gets the lists of feature dictionaries along with names_list. Finally, these lists are passed into model_training_and_testing() function present inside unredactor.py file and gets the predicted names array, if the output is of type 'numpy.ndarray' then the test case will pass else fail.
+## tests/test_1.py execution
+After connecting to the instance using SSH.
+
+Clone the repository: https://github.com/Bhavana-parupalli/cs5293sp22-project3
+
+Give the following command in command line.
+```bash
+pipenv run python -m pytest
+```
 ## Assumptions or bugs
 * I assumed only two features. Firstly, i ran the model using only one feature that is name length but the names predicted are not that good. So, i have added another feature that is word count of the sentence. The names predicted when using both the features are superior. Therefore, i considered these two features. 
 * I have implemented some other models such as logistic regression and naive bayes classifier along with RandomForestClassifier. I found better accuracy when using RandomForestClassifier. Therefore, i considered RandomForestClassifier to predict the names.
