@@ -1,6 +1,5 @@
 # cs5293sp22-project3
 ## Author: Bhavana Parupalli
-## Email: parupallibhavana123@ou.edu
 ## Packages installed
 ```bash 
 import pandas as pd
